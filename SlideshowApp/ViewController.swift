@@ -9,18 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    let imagePathBase = "image"
-    var nowIndex = 0
-    let imageNum = 5
     
-    var images: [UIImage] = []
+    private let imagePathBase = "image"
+    private var nowIndex = 0
+    private let imageNum = 5
     
-    var timer :Timer? = nil
+    private var images: [UIImage] = []
     
-    @IBOutlet weak var slideImageButton: UIButton!
+    private var timer :Timer? = nil
     
-    @IBOutlet var disableUIsDuringSlideShow: [UIControl] = []
+    @IBOutlet private  weak var slideImageButton: UIButton!
+    
+    @IBOutlet private  var disableUIsDuringSlideShow: [UIControl] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +38,12 @@ class ViewController: UIViewController {
         self.nowIndex = self.images.startIndex
         self.updateImage(index: self.nowIndex)
     }
-
-    func createImagePath(index :Int) -> String {
+    
+    private  func createImagePath(index :Int) -> String {
         return "\(self.imagePathBase)\(index)"
     }
     
-    func changeNextImage() {
+    private func changeNextImage() {
         self.nowIndex += 1
         if self.nowIndex >= self.images.endIndex {
             self.nowIndex = self.images.startIndex
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         self.updateImage(index: self.nowIndex)
     }
     
-    func changeBeforeImage() {
+    private func changeBeforeImage() {
         self.nowIndex -= 1
         if self.nowIndex < self.images.startIndex {
             self.nowIndex = self.images.endIndex - 1
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         self.updateImage(index: self.nowIndex)
     }
     
-    func updateImage(index :Int) {
+    private func updateImage(index :Int) {
         if (self.nowIndex < self.images.startIndex) || (self.images.endIndex <= self.nowIndex) {
             return
         }
@@ -70,17 +70,21 @@ class ViewController: UIViewController {
         self.slideImageButton.imageView?.contentMode = .scaleAspectFit
     }
     
-    @objc func onUpdateTimer(timer :Timer){
+    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+        
+    }
+    
+    @objc private func onUpdateTimer(timer :Timer){
         self.changeNextImage()
     }
     
-    @IBAction func onTapNextButton(_ sender: UIButton) {
+    @IBAction private  func onTapNextButton(_ sender: UIButton) {
         self.changeNextImage()
     }
-    @IBAction func onTapBackButton(_ sender: UIButton) {
+    @IBAction private  func onTapBackButton(_ sender: UIButton) {
         self.changeBeforeImage()
     }
-    @IBAction func onTapTogglePlayButton(_ sender: UIButton) {
+    @IBAction private  func onTapTogglePlayButton(_ sender: UIButton) {
         if self.timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.onUpdateTimer(timer:)), userInfo: nil, repeats: true)
         } else {
