@@ -64,6 +64,8 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="aus-Up-rTH" id="RSp-Df-4R0"/>
+                        <outletCollection property="disableUIsDuringSlideShow" destination="VFW-xz-5se" collectionClass="NSMutableArray" id="mfS-2f-80z"/>
+                        <outletCollection property="disableUIsDuringSlideShow" destination="eHZ-4R-axs" collectionClass="NSMutableArray" id="y7Q-dm-h7w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

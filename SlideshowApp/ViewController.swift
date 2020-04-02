@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet var disableUIsDuringSlideShow: [UIControl] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -80,11 +82,15 @@ class ViewController: UIViewController {
     @IBAction func onTapTogglePlayButton(_ sender: UIButton) {
         if self.timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.onUpdateTimer(timer:)), userInfo: nil, repeats: true)
-            return
+        } else {
+            self.timer?.invalidate()
+            self.timer = nil
         }
         
-        self.timer?.invalidate()
-        self.timer = nil
+        for ui in self.disableUIsDuringSlideShow {
+            // タイマーがある == スライドショー中
+            ui.isEnabled = self.timer == nil
+        }
     }
 }
 
