@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     var timer :Timer? = nil
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var slideImageButton: UIButton!
     
     @IBOutlet var disableUIsDuringSlideShow: [UIControl] = []
     
@@ -66,7 +66,8 @@ class ViewController: UIViewController {
             return
         }
         
-        self.imageView.image = self.images[self.nowIndex]
+        self.slideImageButton.setImage(self.images[self.nowIndex], for: UIControl.State.normal)
+        self.slideImageButton.imageView?.contentMode = .scaleAspectFit
     }
     
     @objc func onUpdateTimer(timer :Timer){
