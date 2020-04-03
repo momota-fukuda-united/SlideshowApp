@@ -39,6 +39,16 @@ class ViewController: UIViewController {
         self.updateImage(index: self.nowIndex)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let expandedImageViewController = segue.destination as? ExpandedImageViewController
+        
+        expandedImageViewController?.setImageInfo(image: self.images[self.nowIndex], imageIndex: self.nowIndex)
+        
+        if self.timer != nil {
+            self.toggleTimerPlaying()
+        }
+    }
+    
     private  func createImagePath(index :Int) -> String {
         return "\(self.imagePathBase)\(index)"
     }
@@ -70,8 +80,29 @@ class ViewController: UIViewController {
         self.slideImageButton.imageView?.contentMode = .scaleAspectFit
     }
     
-    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+    private func toggleTimerPlaying(){
+        if self.timer == nil {
+            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.onUpdateTimer(timer:)), userInfo: nil, repeats: true)
+        } else {
+            self.timer?.invalidate()
+            self.timer = nil
+        }
         
+        for ui in self.disableUIsDuringSlideShow {
+            // タイマーがある == スライドショー中
+            ui.isEnabled = self.timer == nil
+        }
+    }
+    
+    @IBAction func unwind(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source as? ExpandedImageViewController
+        // Use data from the view controller which initiated the unwind segue
+        
+        if sourceViewController == nil {
+            return
+        }
+        
+        self.nowIndex = sourceViewController!.imageIndex
     }
     
     @objc private func onUpdateTimer(timer :Timer){
@@ -85,17 +116,7 @@ class ViewController: UIViewController {
         self.changeBeforeImage()
     }
     @IBAction private  func onTapTogglePlayButton(_ sender: UIButton) {
-        if self.timer == nil {
-            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.onUpdateTimer(timer:)), userInfo: nil, repeats: true)
-        } else {
-            self.timer?.invalidate()
-            self.timer = nil
-        }
-        
-        for ui in self.disableUIsDuringSlideShow {
-            // タイマーがある == スライドショー中
-            ui.isEnabled = self.timer == nil
-        }
+        self.toggleTimerPlaying()
     }
 }
 
