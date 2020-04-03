@@ -16,39 +16,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cwX-db-2YU">
-                                <rect key="frame" x="10" y="660" width="355" height="50"/>
+                                <rect key="frame" x="10" y="680" width="355" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFW-xz-5se">
-                                        <rect key="frame" x="0.0" y="0.0" width="118.33333333333333" height="50"/>
-                                        <state key="normal" title="進む"/>
-                                        <connections>
-                                            <action selector="onTapNextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HqT-l2-GA3"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHZ-4R-axs">
-                                        <rect key="frame" x="118.33333333333334" y="0.0" width="118.33333333333334" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="118.33333333333333" height="30"/>
                                         <state key="normal" title="戻る"/>
                                         <connections>
                                             <action selector="onTapBackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FMx-Al-VIO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19n-sm-CnD">
-                                        <rect key="frame" x="236.66666666666666" y="0.0" width="118.33333333333334" height="50"/>
+                                        <rect key="frame" x="118.33333333333334" y="0.0" width="118.33333333333334" height="30"/>
                                         <state key="normal" title="再生/停止"/>
                                         <connections>
                                             <action selector="onTapTogglePlayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vTJ-PS-I6t"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFW-xz-5se">
+                                        <rect key="frame" x="236.66666666666666" y="0.0" width="118.33333333333334" height="30"/>
+                                        <state key="normal" title="進む"/>
+                                        <connections>
+                                            <action selector="onTapNextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HqT-l2-GA3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="6bp-MN-74q"/>
-                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2v-bA-NvE" userLabel="Slide Image Button">
-                                <rect key="frame" x="70" y="194" width="235" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="hE7-hC-w7o" userLabel="height = 300"/>
-                                </constraints>
+                                <rect key="frame" x="70" y="194" width="235" height="320"/>
                                 <state key="normal" image="image4"/>
                                 <connections>
                                     <segue destination="PM3-2u-27w" kind="show" id="PTc-A7-hr6"/>
@@ -62,6 +56,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X2v-bA-NvE" secondAttribute="trailing" constant="70" id="P9o-CK-cxG"/>
                             <constraint firstItem="X2v-bA-NvE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="SRO-di-QME"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cwX-db-2YU" secondAttribute="trailing" constant="10" id="eyz-Da-ftG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cwX-db-2YU" secondAttribute="bottom" constant="68" id="sHV-5H-Y2E"/>
                             <constraint firstItem="cwX-db-2YU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tgb-fi-ZcL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
