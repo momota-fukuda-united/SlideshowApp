@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    private let playOrPauseButtonTextDic :[Bool: String] = [
+        true: "再生",
+        false: "停止"
+    ]
+    
     private let imagePathBase = "image"
     private var nowIndex = 0
     private let imageNum = 5
@@ -18,9 +23,10 @@ class ViewController: UIViewController {
     
     private var timer :Timer? = nil
     
-    @IBOutlet private  weak var slideImageButton: UIButton!
+    @IBOutlet private weak var slideImageButton: UIButton!
+    @IBOutlet private weak var playOrPauseButton: UIButton!
     
-    @IBOutlet private  var disableUIsDuringSlideShow: [UIControl] = []
+    @IBOutlet private var disableUIsDuringSlideShow: [UIControl] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +43,7 @@ class ViewController: UIViewController {
         
         self.nowIndex = self.images.startIndex
         self.updateImage(index: self.nowIndex)
+        self.setPlayOrPauseButtonState(isPlayButton: self.timer == nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -88,10 +95,16 @@ class ViewController: UIViewController {
             self.timer = nil
         }
         
+        self.setPlayOrPauseButtonState(isPlayButton: self.timer == nil)
+        
         for ui in self.disableUIsDuringSlideShow {
             // タイマーがある == スライドショー中
             ui.isEnabled = self.timer == nil
         }
+    }
+    
+    private func setPlayOrPauseButtonState(isPlayButton: Bool){
+        self.playOrPauseButton.setTitle(self.playOrPauseButtonTextDic[isPlayButton], for: UIControl.State.normal)
     }
     
     @IBAction func unwind(_ unwindSegue: UIStoryboardSegue) {
