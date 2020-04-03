@@ -14,6 +14,11 @@
 		A09AF8ED243592C500FCF0F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09AF8EC243592C500FCF0F6 /* Assets.xcassets */; };
 		A09AF8F0243592C500FCF0F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A09AF8EE243592C500FCF0F6 /* LaunchScreen.storyboard */; };
 		A09AF9032435EA5100FCF0F6 /* ExpandedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09AF9022435EA5100FCF0F6 /* ExpandedImageViewController.swift */; };
+		A09AF92E2437333900FCF0F6 /* image0.png in Resources */ = {isa = PBXBuildFile; fileRef = A09AF9292437333900FCF0F6 /* image0.png */; };
+		A09AF92F2437333900FCF0F6 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = A09AF92A2437333900FCF0F6 /* image1.png */; };
+		A09AF9302437333900FCF0F6 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = A09AF92B2437333900FCF0F6 /* image2.png */; };
+		A09AF9312437333900FCF0F6 /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = A09AF92C2437333900FCF0F6 /* image4.png */; };
+		A09AF9322437333900FCF0F6 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = A09AF92D2437333900FCF0F6 /* image3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		A09AF8EF243592C500FCF0F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A09AF8F1243592C500FCF0F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A09AF9022435EA5100FCF0F6 /* ExpandedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedImageViewController.swift; sourceTree = "<group>"; };
+		A09AF9292437333900FCF0F6 /* image0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image0.png; sourceTree = "<group>"; };
+		A09AF92A2437333900FCF0F6 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
+		A09AF92B2437333900FCF0F6 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
+		A09AF92C2437333900FCF0F6 /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
+		A09AF92D2437333900FCF0F6 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,7 @@
 		A09AF8E2243592C400FCF0F6 /* SlideshowApp */ = {
 			isa = PBXGroup;
 			children = (
+				A09AF928243732A100FCF0F6 /* Images */,
 				A09AF8E3243592C400FCF0F6 /* AppDelegate.swift */,
 				A09AF8E5243592C400FCF0F6 /* SceneDelegate.swift */,
 				A09AF8E7243592C400FCF0F6 /* ViewController.swift */,
@@ -68,6 +79,18 @@
 				A09AF9022435EA5100FCF0F6 /* ExpandedImageViewController.swift */,
 			);
 			path = SlideshowApp;
+			sourceTree = "<group>";
+		};
+		A09AF928243732A100FCF0F6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A09AF9292437333900FCF0F6 /* image0.png */,
+				A09AF92A2437333900FCF0F6 /* image1.png */,
+				A09AF92B2437333900FCF0F6 /* image2.png */,
+				A09AF92D2437333900FCF0F6 /* image3.png */,
+				A09AF92C2437333900FCF0F6 /* image4.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +151,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A09AF92E2437333900FCF0F6 /* image0.png in Resources */,
+				A09AF92F2437333900FCF0F6 /* image1.png in Resources */,
+				A09AF9302437333900FCF0F6 /* image2.png in Resources */,
+				A09AF9322437333900FCF0F6 /* image3.png in Resources */,
 				A09AF8F0243592C500FCF0F6 /* LaunchScreen.storyboard in Resources */,
+				A09AF9312437333900FCF0F6 /* image4.png in Resources */,
 				A09AF8ED243592C500FCF0F6 /* Assets.xcassets in Resources */,
 				A09AF8EB243592C400FCF0F6 /* Main.storyboard in Resources */,
 			);
